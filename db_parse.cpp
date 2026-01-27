@@ -88,8 +88,7 @@ void db_parse(bool print)
   if (!prefix && !stat("/share/cs327", &buf)) {
     prefix = strdup("/share/cs327/pokedex/pokedex/data/csv/");
   } else if (!prefix) {
-    // Your third location goes here, if needed.
-    // prefix is freed later, so be sure you malloc it
+    prefix = strdup("./pokedb/");
   }
 
   //No error checking on file load from here on out.  Missing

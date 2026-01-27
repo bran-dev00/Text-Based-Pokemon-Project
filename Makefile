@@ -10,10 +10,10 @@ CXXFLAGS = -Wall -Werror -ggdb -funroll-loops -DTERM=$(TERM)
 
 LDFLAGS = -lncurses
 
-BIN = poke327
+BIN = poke
 OBJS = poke327.o heap.o character.o io.o db_parse.o pokemon.o
 
-all: $(BIN) etags
+# all: $(BIN) etags
 
 $(BIN): $(OBJS)
 	@$(ECHO) Linking $@
@@ -39,6 +39,6 @@ clobber: clean
 	@$(ECHO) Removing backup files
 	@$(RM) *~ \#* *pgm
 
-etags:
-	@$(ECHO) Updating TAGS
-	@etags *.[ch]
+#etags:
+#	@$(ECHO) Updating TAGS
+#	@etags *.[ch]

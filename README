@@ -1,6 +1,6 @@
 # Build & Run Commands
 To build use the `make` command and `./poke` to run the game!
-
+ > Make sure to have ncurses library installed on your machine
 
 # Controls
 

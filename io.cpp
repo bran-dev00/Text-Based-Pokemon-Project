@@ -701,32 +701,17 @@ void io_pokemon_center()
     }
 
     if(input == 'h'){
-      int i;
-      int p_count;        
 
-      if(can_fight() == false){
-        for(int i= 0; i<6; i++){
-          if(world.pc.pokemon_party[i] != NULL){
-            p_count++;
-          }
+      for(auto &pokemon : world.pc.pokemon_party){
+        if(pokemon != NULL){
+          pokemon->heal(10000);
         }
-
-        for(i = 0; i<p_count; i++){
-          world.pc.pokemon_party[i]->heal(10000); 
-        }
-          
-        mvwprintw(building_win,7,2,  "Your party has been restored to full hp ");   
-        refresh();  
-      }else{
-        
-        mvwprintw(building_win,7,2,  "Your party is already full!               ");   
-        refresh();
       }
+          
+      mvwprintw(building_win,7,2,  "Your party has been restored to full hp ");   
+      refresh();  
 
     }
-
-
-
 
     wrefresh(building_win);
     refresh();
